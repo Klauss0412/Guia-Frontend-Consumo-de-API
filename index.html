@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV MAGI Portal | API Evangelion & Honda CBR600RR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="hud-top">
+            <span>// NERV HQ - SISTEMA MAGI v4.2 //</span>
+            <span>OPERADOR: KLAUSS JOSEPH SAAVEDRA RAYO</span>
+            <span>MULTI-API STATUS: ONLINE</span>
+        </header>
+
+        <h1>Terminal EVA-02: Portal de Servicios Web Públicos</h1>
+        <p class="subtitle">
+            Consumo asíncrono en tiempo real de <strong>Jikan REST API v4</strong> (Anime/Manga/Asuka) y <strong>Wikipedia + NHTSA API</strong> (Ficha Técnica Honda CBR600RR) usando <code>fetch()</code>.
+        </p>
+
+        <!-- Barra de botones y buscador -->
+        <section class="controls">
+            <button class="btn-asuka" id="btnAsuka">★ Expediente Asuka (EVA-02)</button>
+            <button id="btnPersonajes">Pilotos & Personal NERV</button>
+            <button class="btn-honda" id="btnHonda">🏍️ Ficha Técnica: Honda CBR600RR</button>
+
+            <div class="search-group">
+                <select id="tipoBusqueda">
+                    <option value="manga">Manga / Manhwa</option>
+                    <option value="anime">Anime</option>
+                </select>
+                <input type="text" id="inputBusqueda" placeholder="Buscar ej: Solo Leveling, Berserk, Evangelion...">
+                <button id="btnBuscar">Consultar API</button>
+            </div>
+        </section>
+
+        <!-- Monitor de peticiones HTTP -->
+        <div id="statusBar" class="status-bar">
+            Iniciando conexión con servidores remotos...
+        </div>
+
+        <!-- Contenedor dinámico donde JavaScript inyecta las tarjetas -->
+        <main id="contenedorResultados" class="grid"></main>
+
+        <footer>
+            DISEÑO DE SISTEMAS EN INTERNET // PORTAL WEB CON FETCH & ASYNC/AWAIT // KLAUSS SAAVEDRA RAYO
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

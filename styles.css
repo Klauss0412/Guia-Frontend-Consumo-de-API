@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0b0c;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 25px 15px;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: #141416;
+    border: 2px solid #d90429;
+    border-top: 12px solid #ff5400;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 0 30px rgba(217, 4, 41, 0.35);
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: monospace;
+    color: #ff5400;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #d90429;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #bdbdbd;
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+}
+
+/* Panel de controles */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #1c1c1f;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #ff5400;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+    min-width: 280px;
+}
+
+input, select {
+    background-color: #0e0e10;
+    color: #fff;
+    border: 1px solid #d90429;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+input {
+    flex: 1;
+    min-width: 180px;
+}
+
+button {
+    background-color: #d90429;
+    color: #fff;
+    border: 1px solid #ff5400;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.85rem;
+}
+
+button:hover {
+    background-color: #ff5400;
+    color: #0b0b0c;
+}
+
+.btn-asuka {
+    background-color: #ff5400;
+    color: #0b0b0c;
+}
+
+.btn-asuka:hover {
+    background-color: #fff;
+    color: #d90429;
+}
+
+.btn-honda {
+    background: linear-gradient(135deg, #d90429 0%, #ff5400 100%);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Barra de estado HTTP */
+.status-bar {
+    font-family: monospace;
+    color: #ff5400;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    background: #1a1a1d;
+    border-radius: 4px;
+    border: 1px solid #2b2b30;
+    word-break: break-all;
+}
+
+/* Cuadrícula de tarjetas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background-color: #1c1c1f;
+    border: 1px solid #d90429;
+    border-top: 4px solid #ff5400;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(255, 84, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-bottom: 2px solid #d90429;
+}
+
+.card-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #d90429;
+    color: #fff;
+    font-size: 0.72rem;
+    font-family: monospace;
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    align-self: flex-start;
+    text-transform: uppercase;
+}
+
+.card-title {
+    color: #ff5400;
+    font-size: 1.05rem;
+    margin: 4px 0 8px 0;
+    font-weight: bold;
+}
+
+.card-info {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin: 3px 0;
+    line-height: 1.45;
+}
+
+.card-link {
+    margin-top: auto;
+    padding-top: 10px;
+    color: #ff5400;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+    color: #d90429;
+}
+
+/* Vista expandida para Expediente Asuka y Ficha Técnica Honda */
+.dossier-box {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    background-color: #1c1c1f;
+    border: 2px solid #ff5400;
+    border-radius: 6px;
+    padding: 22px;
+}
+
+.dossier-box img {
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 2px solid #d90429;
+    object-fit: cover;
+}
+
+.dossier-details {
+    flex: 1;
+    min-width: 260px;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 0.88rem;
+}
+
+.specs-table th, .specs-table td {
+    border: 1px solid #333;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.specs-table th {
+    background-color: #261216;
+    color: #ff5400;
+    width: 38%;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+    font-family: monospace;
+    color: #777;
+    font-size: 0.8rem;
+}
